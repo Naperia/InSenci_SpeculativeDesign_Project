@@ -128,15 +128,6 @@ main {
     margin-bottom: 20px;
 }
 
-.video-section iframe {
-    width: 100%;
-    max-width: 800px;
-    height: 700px;
-    border: none;
-    margin: 0 auto;
-    display: block;
-}
-
 /* Logo Styles */
 .logo img {
     max-width: 100%;
