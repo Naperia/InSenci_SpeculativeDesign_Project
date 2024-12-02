@@ -168,8 +168,4 @@ main {
     .video-section p {
         font-size: 1em;
     }
-
-    .video-section iframe {
-        height: 700px;
-    }
 }
