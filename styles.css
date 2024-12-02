@@ -1,13 +1,30 @@
+/* Global Reset */
+.about-header {
+    margin-top: 100px; /* Adjust spacing to account for the fixed navbar height */
+    text-align: center;
+    padding: 80px 40px; /* Add padding for spacing */
+    background-color: #000000; /* Optional background color */
+    color: white; /* Text color */
+    font-size: 40px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    font-family: Arial, sans-serif; /* Optional font */
+    background-color: #f4f4f4; /* Optional background color */
 }
 
+
+/* Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -17,8 +34,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
 }
 
 .nav-links {
@@ -31,26 +53,32 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
 main {
     margin-top: 80px;
 }
 
+/* Featured Products Section */
 .featured-products {
-    padding: 0; /* Remove padding to allow full width */
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0; /* Remove padding for full width */
+    margin: 0;
 }
 
 .product-box {
-    background: #000000;
+    position: relative;
     width: 100%;
     height: auto;
-    margin: 0;
-    padding: 0;
-    position: relative;
+    background: #000000;
     overflow: hidden;
 }
 
@@ -60,18 +88,19 @@ main {
     object-fit: cover;
 }
 
-/* Add text overlay on the product images */
+/* Text Overlay for Product Images */
 .product-box h2, 
 .product-box p {
     position: absolute;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .product-box h2 {
     bottom: 60px;
     left: 40px;
     font-size: 2.5em;
+    font-weight: bold;
 }
 
 .product-box p {
@@ -80,22 +109,76 @@ main {
     font-size: 1.8em;
 }
 
+/* Video Section */
 .video-section {
     padding: 40px;
     background: #000000;
+    color: white;
+    text-align: center;
 }
 
-.logo {
-    width: 50%;
-    height: 50%;
+.video-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
+.video-section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Logo Styles */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    /* Navbar for Smaller Screens */
     .nav-links {
         display: none;
     }
-    
+
+    /* Hero Section Image */
     .hero img {
         height: 50vh;
+        object-fit: cover;
+    }
+
+    /* Text Overlay for Products */
+    .product-box h2 {
+        font-size: 2em;
+        bottom: 40px;
+        left: 20px;
+    }
+
+    .product-box p {
+        font-size: 1.5em;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    /* Video Section */
+    .video-section h2 {
+        font-size: 2em;
+    }
+
+    .video-section p {
+        font-size: 1em;
+    }
+
+    .video-section iframe {
+        height: 300px;
     }
 }
